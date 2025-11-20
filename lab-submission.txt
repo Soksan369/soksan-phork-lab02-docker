@@ -1,0 +1,70 @@
+# Lab 2 - Docker Learning Notes
+## Student: Phork Soksan
+## Date: 20/11/2025
+
+## Part 1: Containerize an application
+- Learned how to create a Dockerfile with proper instructions (FROM, WORKDIR, COPY, RUN, EXPOSE, CMD)
+- Understood the difference between Docker images and containers
+- Used docker build to create an image from Dockerfile
+- Ran container with docker run and mapped ports using -p flag
+- Key commands: docker build -t, docker run -d -p
+
+## Part 2: Update the application
+- Learned about Docker layer caching and how it optimizes rebuilds
+- Modified application code and rebuilt the image
+- Observed that only changed layers are rebuilt, saving time
+- Understood the importance of proper layer ordering in Dockerfile
+
+## Part 3: Share the application
+- Created account on Docker Hub and learned to tag images properly
+- Used docker login to authenticate with Docker Hub
+- Pushed image to registry using docker push
+- Pulled image on different environment to verify sharing works
+- Learned about image naming conventions and tags
+
+## Part 4: Persist the DB
+- Understood the problem of ephemeral container storage
+- Learned about Docker volumes for persistent data storage
+- Created named volumes using docker volume create
+- Mounted volumes into containers using -v flag
+- Verified data persists after container restart
+
+## Part 5: Use bind mounts
+- Learned the difference between volumes and bind mounts
+- Used bind mounts for development with live reload
+- Mounted local source code into container for real-time updates
+- Understood use cases: volumes for production, bind mounts for development
+
+## Part 6: Multi-container apps
+- Learned about Docker container networking
+- Created custom networks for container communication
+- Connected multiple containers (app + database) on same network
+- Used container names as DNS for inter-container communication
+- Understood the importance of container dependencies
+
+## Part 7: Use Docker Compose
+- Created docker-compose.yml file to define multi-service applications
+- Learned YAML structure for defining services, networks, volumes
+- Used docker-compose up to start all services with single command
+- Managed multi-container environments efficiently
+- Used docker-compose down to stop and remove all resources
+
+## Part 8: Image-building best practices
+- Learned to use .dockerignore to exclude unnecessary files
+- Understood multi-stage builds to reduce final image size
+- Learned about security best practices (non-root users, etc.)
+- Optimized layer caching by ordering instructions properly
+- Used specific version tags instead of 'latest'
+
+## Part 9: What next
+- Explored additional Docker features and advanced topics
+- Learned about Docker Swarm for orchestration
+- Understood the path to Kubernetes and other container platforms
+- Identified resources for continued Docker learning
+
+## Key Takeaways:
+- Docker provides consistent environments from development to production
+- Containerization solves "it works on my machine" problems
+- Docker Compose simplifies multi-container application management
+- Proper image building practices are crucial for security and performance
+- Volumes and bind mounts handle different data persistence needs
